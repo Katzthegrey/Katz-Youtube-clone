@@ -1,0 +1,1218 @@
+/* style.css */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-page: #f9f9f9;
+    --bg-nav: #ffffff;
+    --bg-card: #ffffff;
+    --bg-hover: #f2f2f2;
+    --bg-button: #f2f2f2;
+    --bg-ad: #f9f9f9;
+    
+    --text-primary: #030303;
+    --text-secondary: #606060;
+    --text-inverse: #ffffff;
+    
+    --border-light: #e5e5e5;
+    --border-focus: #1c62b9;
+    
+    --accent-blue: #065fd4;
+    --accent-red: #cc0000;
+    --accent-orange: rgba(255, 165, 0, 0.05);
+    --accent-orange-outline: rgba(255, 165, 0, 0.3);
+    
+    --logo-filter: none;
+    --shadow-color: rgba(0, 0, 0, 0.05);
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f9f9f9;
+}
+
+/* Navigation Styles */
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 16px;
+    height: 56px;
+    background-color: white;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+/* Left section of nav */
+nav .menu-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    margin-right: 16px;
+}
+
+nav .menu-button i {
+    font-size: 20px;
+    color: #030303;
+}
+
+/* Logo styling with ZA text */
+nav .logo {
+    height: 20px;
+    margin-right: auto;
+}
+
+#searchbar {
+    display: flex;
+    align-items: center;
+    flex: 0 1 600px;
+    margin: 0 auto 0 20px; 
+    position: relative;
+    left: -40px; 
+}
+
+#searchbar input {
+    flex: 1;
+    height: 40px;
+    padding: 0 16px;
+    border: 1px solid #ccc;
+    border-right: none;
+    border-radius: 40px 0 0 40px;
+    font-size: 16px;
+    outline: none;
+}
+
+#searchbar input:focus {
+    border-color: #1c62b9;
+}
+
+#searchbar i {
+    background-color: #f8f8f8;
+    border: 1px solid #ccc;
+    border-left: none;
+    padding: 0 20px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    border-radius: 0 40px 40px 0;
+    cursor: pointer;
+    color: #606060;
+    font-size: 16px;
+}
+
+#searchbar i:hover {
+    background-color: #f0f0f0;
+}
+
+.voice-search-button {
+    background: none;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #f2f2f2;
+    margin-left: 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    left: -280px; 
+}
+
+.voice-search-button i {
+    font-size: 18px;
+    color: #606060;
+}
+
+.voice-search-button:hover {
+    background-color: #e5e5e5;
+}
+
+/* REDESIGNED Create button - YouTube style */
+nav .create {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border-radius: 24px;
+    background-color: #f2f2f2;
+    border: 1px solid #e5e5e5;
+    font-size: 14px;
+    font-weight: 500;
+    color: #030303;
+    transition: background-color 0.2s;
+}
+
+nav .create i {
+    font-size: 16px;
+    color: #030303;
+    margin-right: 0; /* Gap handles spacing */
+}
+
+nav .create span {
+    line-height: 1;
+}
+
+nav .create:hover {
+    background-color: #e5e5e5;
+    border-color: #d9d9d9;
+}
+
+/* NOTIFICATION BUTTON with badge */
+.notification-icon {
+    position: relative;
+    background: none;
+    border: none;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 8px;
+}
+
+.notification-icon i {
+    font-size: 20px;
+    color: #606060;
+}
+
+.notification-icon:hover {
+    background-color: #f2f2f2;
+}
+
+.noti-count {
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    background-color: #cc0000;
+    color: white;
+    font-size: 11px;
+    font-weight: 500;
+    min-width: 16px;
+    height: 16px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 4px;
+    border: 1.5px solid white;
+}
+
+/* Right section container for better organization */
+.nav-right-section {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin-left: auto;
+}
+
+
+.profile-icon {
+    background: none;
+    border: none;
+    cursor: pointer;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: #f2f2f2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 4px;
+}
+
+.profile-icon i {
+    font-size: 18px;
+    color: #606060;
+}
+
+.profile-iconhover {
+    background-color: #e5e5e5;
+}
+
+
+body > button {
+    display: none; /* Hide the old profile button outside nav */
+}
+
+/* Aside/Sidebar Styles */
+aside {
+    position: fixed;
+    left: 0;
+    top: 56px;
+    width: 240px;
+    height: calc(100vh - 56px);
+    background-color: white;
+    overflow-y: auto;
+    padding: 12px 0;
+    z-index: 99;
+}
+
+/* Custom scrollbar for aside */
+aside::-webkit-scrollbar {
+    width: 8px;
+}
+
+aside::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+aside::-webkit-scrollbar-thumb {
+    background: #909090;
+    border-radius: 4px;
+}
+
+aside::-webkit-scrollbar-thumb:hover {
+    background: #606060;
+}
+
+.sidebar-nav {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px 24px;
+    margin: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Pushes chevron to the right */
+    font-size: 16px;
+    font-weight: 600;
+    color: #555555; /* YouTube's secondary text color */
+    text-align: left;
+    letter-spacing: 0.2px;
+    transition: background-color 0.2s;
+}
+
+/* Chevron icon styling */
+.sidebar-nav i {
+    font-size: 14px;
+    color: #555555;
+    opacity: 0.7;
+    transition: opacity 0.2s;
+}
+
+/* Hover effect */
+.sidebar-nav:hover {
+    background-color: #f2f2f2;
+}
+
+.sidebar-nav:hover i {
+    opacity: 1;
+}
+
+/* Section styles */
+.nav-shortcuts,
+.sub-btn-gp {
+    padding: 12px 0;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.sub-btn {
+    display: flex;
+    align-items: center;
+    padding: 0 24px;
+    height: 40px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    color: #030303;
+    gap: 24px;
+}
+
+.sub-btn:hover {
+    background-color: #f2f2f2;
+}
+
+.sub-btn img {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: #f2f2f2;
+}
+
+.sub-btn .live-icon {
+    width: 14px;
+    height: 14px;
+    margin-left: auto;
+    border-radius: 2px;  
+}
+
+.live-icon-wrapper {
+    position: relative;
+    display: inline-flex;
+    margin-left: auto;
+}
+
+.live-icon-wrapper::after {
+    display: none;
+}
+
+.sub-btn:hover .live-icon {
+    opacity: 1;
+    transform: scale(1.05);
+}
+
+.blue-dot {
+    display: inline-block;
+    width: 5px;
+    height: 5px;
+    background-color: #3ea6ff;  
+    border-radius: 50%;
+    margin-left: 6px;
+    flex-shrink: 0;
+    position: relative;
+}
+
+.blue-dot::after {
+    display: none;
+}
+
+.hover-card {
+    position: fixed;
+    left: 250px;
+    width: 220px;
+    padding: 12px;
+    padding-top: 124px;
+    background-color: #fff;
+    background-size: 100% 124px;
+    background-repeat: no-repeat;
+    background-position: top center;
+    font-size: 12px;
+    font-weight: 500;
+    color: #030303;
+    line-height: 1.5;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.2s ease, visibility 0.2s ease;
+    z-index: 1000;
+}
+
+.hover-card::before {
+    content: attr(data-desc) "\A" attr(data-views);
+    white-space: pre-line;
+}
+
+.hover-card--live { top: 150px; background-image: url('ContentRepo/live.avif'); }
+.hover-card--interview { top: 190px; background-image: url('ContentRepo/short4.avif'); }
+.hover-card--boa { top: 270px; background-image: url('ContentRepo/short2.avif'); }
+
+body:has(.live-icon-wrapper:hover) .hover-card--live,
+body:has(.blue-dot--interview:hover) .hover-card--interview,
+body:has(.blue-dot--boa:hover) .hover-card--boa {
+    opacity: 1;
+    visibility: visible;
+}
+
+.show-more {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px 24px;
+    margin: 4px 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 16px; 
+    font-size: 14px;
+    font-weight: 600;
+    color: #555555; 
+    text-align: left;
+    transition: background-color 0.2s;
+}
+
+/* Chevron icon styling */
+.show-more i {
+    font-size: 16px;
+    color: #555555;
+    opacity: 0.7;
+    transition: opacity 0.2s;
+}
+
+/* Hover effect */
+.show-more:hover {
+    background-color: #f2f2f2;
+}
+
+.show-more:hover i {
+    opacity: 1;
+}
+/* Section headers */
+.sub-btn-gp h2 {
+    font-size: 16px;
+    font-weight: 500;
+    padding: 8px 24px;
+    color: #606060;
+}
+
+
+/* Footer styles */
+aside footer {
+    padding: 16px 24px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+aside footer a {
+    color: #606060;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+aside footer a:hover {
+    color: #030303;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    margin-right: auto;
+}
+
+.logo-text {
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: -1px;
+    color: #030303;
+}
+
+/**Main Content*/
+main {
+    margin-left: 240px; 
+    margin-top: 56px; 
+    padding: 24px 24px 0 24px;
+    background-color: #f9f9f9;
+    min-height: calc(100vh - 56px);
+}
+
+/* Categories container */
+.categories {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 0 0 16px 0;
+    overflow-x: auto;
+    white-space: nowrap;
+    scrollbar-width: none; 
+    -ms-overflow-style: none; 
+}
+
+
+.categories::-webkit-scrollbar {
+    display: none;
+}
+
+/* Category chip buttons */
+.categories button {
+    background-color: rgba(0, 0, 0, 0.05);
+    border: none;
+    border-radius: 8px;
+    padding: 8px 12px;
+    font-size: 14px;
+    font-weight: 400;
+    color: #030303;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    white-space: nowrap;
+    flex-shrink: 0; 
+}
+
+/* First button "All" - often styled differently */
+.categories button:first-child {
+    background-color: #030303;
+    color: white;
+}
+
+/* Hover state */
+.categories button:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+/* Active/selected state */
+.categories button.active {
+    background-color: #030303;
+    color: white;
+}
+
+/* Content cards grid container */
+.content-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 20px 0;
+}
+
+/* Base card styles */
+.YTcontent-card {
+    position: relative;
+    width: 100%;
+    max-width: 360px;
+    transition: all 0.2s ease;
+    border-radius: 12px; 
+    background-color: transparent;
+}
+
+.YTcontent-card:hover {
+    background-color: rgba(255, 165, 0, 0.05); /* Very dull orange (5% opacity) */
+    outline: 1px solid rgba(255, 165, 0, 0.3); /* Subtle orange outline */
+    outline-offset: 2px; /* Slight offset from card edge */
+    border-radius: 12px; /* Keep consistent rounding */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); /* Optional subtle shadow */
+}
+
+/* Ad container - slightly larger */
+.Ad-container {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    padding: 16px;
+    background-color: #f9f9f9;
+    border-radius: 12px;
+    border: 1px solid #e5e5e5;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* Consistent thumbnail container for both */
+.Ad-container .thumbnail-container,
+.YTcontent-card .thumbnail-container {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    border-radius: 12px;
+    margin-bottom: 12px; /* Space between thumbnail and info */
+}
+
+.Ad-container .thumbnail-img,
+.YTcontent-card .thumbnail-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+/* Ad logo - MOVED to bottom with channel info */
+.ad-logo {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    margin-right: 12px;
+    border: 2px solid white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Video info section for Ad */
+.Ad-container .video-info {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 0;
+}
+
+/* Channel info container */
+.channel-info {
+    flex: 1;
+}
+
+.Ad-container h3 {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.4;
+    margin: 0 0 6px 0;
+    color: #030303;
+}
+
+/* Sponsored line - NOW ON ONE LINE */
+.sponsored-line {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 14px;
+    color: #606060;
+    margin: 0;
+    white-space: nowrap;
+}
+
+.sponsored-line span {
+    color: #606060;
+}
+
+.sponsored-line .channel-name {
+    font-weight: 500;
+    color: #030303;
+}
+
+/* Ad buttons */
+.ad-actions {
+    display: flex;
+    gap: 8px;
+    margin-top: 12px;
+    justify-content: center;
+    
+}
+
+.Ad-container .ad-btn,
+.Ad-container .ad-btn2 {
+    flex: 1; 
+    padding: 8px 0; 
+    border-radius: 18px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: none;
+    text-align: center; 
+    white-space: nowrap; 
+}
+
+.Ad-container .ad-btn {
+    background-color:  #f2f2f2;
+    color: black;
+}
+
+.Ad-container .ad-btn:hover {
+    background-color:#e5e5e5;
+}
+
+.Ad-container .ad-btn2 {
+    background-color: black;
+    color: white;
+    border: 1px solid #e5e5e5;
+}
+
+.Ad-container .ad-btn2:hover {
+    background-color: #3d3d3d;
+}
+
+/* Regular video card info */
+.YTcontent-card .video-info {
+    padding: 0 4px;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    width: 100%;
+    position: relative;
+}
+
+.YTcontent-card .yt-logo {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.YTcontent-card .video-text {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+/* Move content menu inside video-info */
+.YTcontent-card .content-menu {
+    position: static; /* Remove absolute positioning */
+    background: none;
+    border: none;
+    cursor: pointer;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #606060;
+    flex-shrink: 0;
+    margin-top: -4px; /* Align with first line */
+}
+
+.YTcontent-card .content-menu:hover {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.thumbnail-container {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    border-radius: 12px;
+    margin-bottom: 12px;
+}
+
+/* Both image and iframe need absolute positioning */
+.thumbnail-img,
+.video-iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.3s ease;
+}
+
+/* Iframe specific styles */
+.video-iframe {
+    opacity: 0;
+    pointer-events: none;
+    border: none;
+    z-index: 2; /* Higher z-index to appear above image when visible */
+}
+
+/* Image stays below iframe */
+.thumbnail-img {
+    z-index: 1;
+}
+
+/* On hover, show iframe and hide image */
+.thumbnail-container:hover .video-iframe {
+    opacity: 1;
+    pointer-events: auto; /* Allows clicking */
+    z-index: 3; /* Ensure it's on top */
+}
+
+.thumbnail-container:hover .thumbnail-img {
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* Duration badge */
+.duration {
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 3px 6px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 500;
+    z-index: 2;
+}
+
+.Yt-Shorts {
+    margin: 40px 0 20px 0;
+    width: 100%;
+}
+
+/* Shorts Header */
+.Yt-Shorts .Header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.Yt-Shorts .Header img {
+    width: 28px;
+    height: 28px;
+}
+
+.Yt-Shorts .Header h2 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #030303;
+    margin: 0;
+}
+
+/* Shorts Grid - 5 items */
+.Yt-Shorts .shorts-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* 5 equal columns */
+    gap: 16px;
+    width: 100%;
+}
+
+/* Individual Short Card */
+.Yt-Shorts .short-vid {
+    position: relative;
+    width: 100%;
+    max-width: 220px; /* Control card width */
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.2s ease;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+/* Thumbnail Container */
+.Yt-Shorts .thumbnail-container {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 9 / 16; /* Portrait for Shorts */
+    overflow: hidden;
+    border-radius: 12px;
+    margin-bottom: 8px;
+}
+
+/* Thumbnail Image */
+.Yt-Shorts .short-thumbnail {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+    transition: opacity 0.3s ease;
+    z-index: 1;
+}
+
+/* Iframe for hover preview */
+.Yt-Shorts .video-iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    pointer-events: none;
+    border: none;
+    z-index: 2;
+    transition: opacity 0.3s ease;
+}
+
+/* Hover effect for card */
+.Yt-Shorts .short-vid:hover {
+    background-color: rgba(255, 165, 0, 0.05); /* Dull orange background */
+    outline: 1px solid rgba(255, 165, 0, 0.3);
+    outline-offset: 2px;
+    border-radius: 12px;
+}
+
+/* Show iframe on hover */
+.Yt-Shorts .short-vid:hover .video-iframe {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* Hide thumbnail when iframe is visible */
+.Yt-Shorts .short-vid:hover .short-thumbnail {
+    opacity: 0;
+}
+
+/* Shorts Description */
+.Yt-Shorts .shorts-desc {
+    padding: 4px 4px 8px 4px;
+}
+
+.Yt-Shorts .shorts-desc h3 {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.3;
+    margin: 0 0 4px 0;
+    color: #030303;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.Yt-Shorts .shorts-desc p {
+    font-size: 12px;
+    color: #606060;
+    margin: 0;
+}
+
+/* Optional: Three-dot menu for shorts */
+.Yt-Shorts .content-menu {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background: rgba(0, 0, 0, 0.6);
+    border: none;
+    cursor: pointer;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    z-index: 3;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.Yt-Shorts .short-vid:hover .content-menu {
+    opacity: 1;
+}
+
+.Yt-Shorts .content-menu:hover {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+/* Second video load section */
+.second-video-load {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px; 
+    margin: 30px 0;
+    width: 100%;
+}
+
+/* Ensure cards take full width of grid cells */
+.second-video-load .YTcontent-card {
+    width: 100%;
+    max-width: 100%; 
+    margin: 0; 
+}
+
+/* ==================== */
+/* MOBILE RESPONSIVE DESIGN */
+/* ==================== */
+
+@media screen and (max-width: 768px) {
+    /* Hide desktop navigation */
+    nav .menu-button,
+    nav .logo,
+    #searchbar,
+    .voice-search-button,
+    nav .create,
+    .notification-icon,
+    .profile-icon {
+        display: none;
+    }
+
+    /* Mobile bottom navigation bar */
+    .mobile-bottom-nav {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 60px;
+        background-color: white;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        border-top: 1px solid #e5e5e5;
+        z-index: 1000;
+        padding: 0 8px;
+        box-shadow: 0 -2px 10px rgba(0,0,0,0.05);
+    }
+
+    .mobile-nav-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 8px 0;
+        width: 20%;
+        color: #606060;
+        font-size: 10px;
+        gap: 4px;
+        transition: color 0.2s;
+    }
+
+    .mobile-nav-item i {
+        font-size: 22px;
+        margin-bottom: 2px;
+    }
+
+    .mobile-nav-item span {
+        font-size: 11px;
+        font-weight: 500;
+    }
+
+    .mobile-nav-item.active {
+        color: #030303;
+    }
+
+    /* Adjust main content for bottom nav */
+    body {
+        padding-bottom: 60px;
+    }
+
+    main {
+        margin-left: 0;
+        padding: 16px 12px 0 12px;
+    }
+
+    /* Hide sidebar on mobile */
+    aside {
+        display: none;
+    }
+
+    /* Adjust categories for mobile */
+    .categories {
+        padding: 0 0 12px 0;
+    }
+
+    .categories button {
+        padding: 6px 10px;
+        font-size: 13px;
+    }
+
+    /* Content cards grid - 2 columns on mobile */
+    .content-cards {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+        padding: 12px 0;
+    }
+
+    /* Shorts grid - horizontal scroll on mobile */
+    .Yt-Shorts .shorts-grid {
+        display: flex;
+        overflow-x: auto;
+        gap: 12px;
+        padding: 8px 0 16px 0;
+        scrollbar-width: none;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .Yt-Shorts .shorts-grid::-webkit-scrollbar {
+        display: none;
+    }
+
+    .Yt-Shorts .short-vid {
+        min-width: 130px;
+        max-width: 130px;
+    }
+
+    /* Second video load grid */
+    .second-video-load {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+
+    /* Adjust video card for mobile */
+    .YTcontent-card .video-text h3 {
+        font-size: 14px;
+        line-height: 1.3;
+        margin-bottom: 2px;
+    }
+
+    .YTcontent-card .video-text p {
+        font-size: 12px;
+    }
+
+    /* Adjust ad container for mobile */
+    .Ad-container {
+        max-width: 100%;
+        padding: 12px;
+    }
+
+    .Ad-container h3 {
+        font-size: 14px;
+    }
+
+    .sponsored-line {
+        font-size: 12px;
+        flex-wrap: wrap;
+    }
+
+    .ad-actions {
+        flex-direction: row;
+    }
+
+    .Ad-container .ad-btn,
+    .Ad-container .ad-btn2 {
+        padding: 6px 0;
+        font-size: 12px;
+    }
+
+    /* Mobile header with just logo and create */
+    .mobile-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 0 12px 0;
+        height: 48px;
+    }
+
+    .mobile-header .logo {
+        height: 20px;
+        display: block !important;
+    }
+
+    .mobile-header .create-mobile {
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .mobile-header .create-mobile i {
+        font-size: 22px;
+        color: #030303;
+    }
+}
+
+/* Small phones (below 480px) */
+@media screen and (max-width: 480px) {
+    /* Single column for content */
+    .content-cards {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .second-video-load {
+        grid-template-columns: 1fr;
+    }
+
+    /* Adjust shorts cards */
+    .Yt-Shorts .short-vid {
+        min-width: 110px;
+        max-width: 110px;
+    }
+
+    .Yt-Shorts .shorts-desc h3 {
+        font-size: 12px;
+    }
+
+    .Yt-Shorts .shorts-desc p {
+        font-size: 10px;
+    }
+
+    /* Categories horizontal scroll */
+    .categories {
+        padding: 0 0 8px 0;
+    }
+
+    .categories button {
+        padding: 6px 10px;
+        font-size: 12px;
+    }
+
+    /* Adjust video card info */
+    .YTcontent-card .yt-logo {
+        width: 32px;
+        height: 32px;
+    }
+
+    .YTcontent-card .content-menu {
+        width: 28px;
+        height: 28px;
+    }
+}
+
+
+
+

@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Katz-ViewTube</title>
+    <link rel="stylesheet" href="style.css">
+    <!--Awesome font icon imports-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!--Youtube Google Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Cursor feature: hover cards outside aside so they're not clipped by overflow-y: auto -->
+    <div class="hover-card hover-card--live" data-desc="Metaphor has been live for 30 minutes" data-views="2.4K watching" aria-hidden="true"></div>
+    <div class="hover-card hover-card--interview" data-desc="Interview Happy posted this video — check it out: What are the use cases of async in .NET" data-views="23K views" aria-hidden="true"></div>
+    <div class="hover-card hover-card--boa" data-desc="Black Ops Amazing posted this video — check it out: Best Warzone Loadouts 2025" data-views="12K views" aria-hidden="true"></div>
+    <nav>
+      <!--Hamburger Icon menu-->
+     <button class="menu-button">
+  <i class="fas fa-bars"></i>
+</button>
+      <!--Logo-->
+ <div class="logo-container">
+       <img src="Repository/Logo.svg" alt="Logo" class="logo">
+       <span class="logo-text">ZA</span>
+   </div>
+      <!--Search bar text field-->
+      <div id="searchbar">
+      <input type="search" id="search" placeholder="search">
+     <i class="fas fa-search"></i>
+      </div>
+      
+      <!--Voice search button-->
+      <button class="voice-search-button">
+      <i class="fas fa-microphone"></i>
+      </button>
+      <!--Create nav button-->
+     <button class="create">
+  <i class="fas fa-plus"></i>
+  <span>Create</span>
+</button>
+
+      <!--Notification Icon-->
+        <button class="notification-icon">
+            <i class="fas fa-bell"></i>
+            <span class="noti-count">+9</span>
+        </button>
+      <!--profile Icon-->
+         <button class="profile-icon">
+        <i class="fas fa-user"></i>
+      </button>
+
+      
+    </nav>
+   
+    <!-- Cursor feature: page-wrapper enables scrollable sidebar + unclipped hover cards -->
+    <div class="page-wrapper">
+    <aside>
+        <section class="nav-shortcuts">
+            <div class="sub-btn">
+             <img src="Repository/Home.svg" alt="Home"/>
+              Home
+            </div>
+             <div class="sub-btn">
+             <img src="Repository/shorts.svg" alt="Shorts"/>
+             Shorts
+            </div>
+        </section>
+
+        <!--subscriptions btton group-->
+        <section class="sub-btn-gp">
+            <button class="sidebar-nav">
+                  Subscriptions
+            <i class="fa-solid fa-chevron-right"></i>
+            </button>
+            <!-- Cursor feature: live icon with hover popup -->
+            <div class="sub-btn">
+             <img src="Repository/unnamed.jpg" alt="Meta"/>
+             Metaphor
+             <span class="live-icon-wrapper"><img src="Repository/live.svg" alt="is-live" class="live-icon"/></span>
+            </div>
+            <!-- Cursor feature: blue dot with miniature card popup (thumbnail, description, views) -->
+            <div class="sub-btn">
+             <img src="Repository/Happy.jpg" alt="Meta"/>
+             Interview Happy
+             <span class="blue-dot blue-dot--interview" data-tooltip="Interview Happy posted this video — check it out: What are the use cases of async in .NET" data-views="23K views"></span> 
+            </div>
+            <div class="sub-btn">
+             <img src="Repository/Emba.jpg" alt="Meta"/>
+             Emba Kub Motoring
+            </div>
+            <!-- Cursor feature: blue dot with miniature card popup (thumbnail, description, views) -->
+            <div class="sub-btn">
+             <img src="Repository/BOA.jpg" alt="Meta"/>
+             Black Ops Amazing
+             <span class="blue-dot blue-dot--boa" data-tooltip="Black Ops Amazing posted this video — check it out: Best Warzone Loadouts 2025" data-views="12K views"></span> 
+            </div>
+            <div class="sub-btn">
+             <img src="Repository/Code-Space.jpg" alt="Meta"/>
+             Code Space
+            </div>
+               <div class="sub-btn">
+             <img src="Repository/Tra Rags.jpg" alt="Meta"/>
+             Tra Rags
+            </div>
+            <button class="show-more">
+                <i class="fa-solid fa-chevron-down"></i>
+                Show more
+            </button>
+        </section>
+
+         <section class="sub-btn-gp">
+               <button class="sidebar-nav">
+                  You
+                   <i class="fa-solid fa-chevron-right"></i>
+               </button>
+            <div class="sub-btn">
+             <img src="Repository/History.svg" alt="History"/>
+             History
+            </div>
+                 <div class="sub-btn">
+             <img src="Repository/Playlist.svg" alt="Play"/>
+             Playlists
+            </div>
+                 <div class="sub-btn">
+             <img src="Repository/WatchLater.svg" alt="Watch"/>
+             Watch later
+            </div>
+                 <div class="sub-btn">
+             <img src="Repository/Liked.svg" alt="Liked"/>
+             Liked videos
+            </div>
+                 <div class="sub-btn">
+             <img src="Repository/Yourvids.svg" alt="Your"/>
+             Your videos
+            </div>
+                 <div class="sub-btn">
+             <img src="Repository/Downloads.svg" alt="downloads"/>
+             Downloads
+            </div>
+        </section>
+
+         <section class="sub-btn-gp">
+            <h2>Explore</h2>
+            <div class="sub-btn">
+             <img src="Repository/Music.svg" alt="Home"/>
+             Music
+            </div>
+              <div class="sub-btn">
+             <img src="Repository/Gaming.svg" alt="Home"/>
+             Gaming
+            </div>
+              <div class="sub-btn">
+             <img src="Repository/News.svg" alt="Home"/>
+              News
+            </div>
+               <button class="show-more">
+                <i class="fa-solid fa-chevron-down"></i>
+                Show more
+            </button>
+        </section>
+
+         <section class="sub-btn-gp">
+            <h2>More From Youtube</h2>
+            <div class="sub-btn">
+             <img src="Repository/Play.svg" alt="Home"/>
+             YouTube Premium
+            </div>
+            <div class="sub-btn">
+             <img src="Repository/Studio.svg" alt="Home"/>
+             YouTube Studio
+            </div>
+            <div class="sub-btn">
+             <img src="Repository/YTMusic.svg" alt="Home"/>
+             YouTube Music
+            </div>
+            <div class="sub-btn">
+             <img src="Repository/YTKids.svg" alt="Home"/>
+             YouTube Kids
+            </div>
+        </section>
+
+         <section class="sub-btn-gp">
+            <div class="sub-btn">
+             <img src="Repository/Setting.svg" alt="Home"/>
+             Settings
+            </div>
+             <div class="sub-btn">
+             <img src="Repository/Flag.svg" alt="Home"/>
+             Report History
+            </div>
+             <div class="sub-btn">
+             <img src="Repository/Help.svg" alt="Home"/>
+             Help
+            </div>
+             <div class="sub-btn">
+             <img src="Repository/Feedback.svg" alt="Home"/>
+             Send feedback
+            </div>
+        </section>
+        <footer>
+            <a rel="#" href="">link</a>
+             <a rel="#" href="">link</a>
+              <a rel="#" href="">link</a>
+               <a rel="#" href="">link</a>
+                <a rel="#" href="">link</a>
+        </footer>
+    </aside>
+      
+    <main>
+        <!--Category links-->
+        <div class="categories">
+        <button>All</button>
+        <button>Gaming</button>
+        <button>Call of Duty</button>
+        <button>Debugging</button>
+        <button>Music</button>
+        <button>BMW</button>
+        <button>Asp.Net</button>
+        <button>Vegeta</button>
+        <button>Manga</button>
+        <button>Computer Hardware</button>
+        <button>Coding tutorials</button>
+        <button>BMW G80</button>
+        <button>New Movies</button>
+        <button>New to you</button>
+        </div>
+        <!--Main video thumbnails and content cards-->
+
+        <section class="Content">
+   <div class="content-cards">
+    <!-- Ad Card -->
+    <div class="Ad-container">
+        <div class="thumbnail-container">
+            <img src="ContentRepo/Ad-pic.webp" alt="Ad thumbnail" class="thumbnail-img">
+            <span class="duration">0:15</span>
+        </div>
+        
+        <div class="video-info">
+            <img src="ContentRepo/Ad-logo.png" alt="" class="ad-logo">
+            
+            <div class="channel-info">
+                <h3>Don't risk unaccredited courses. Get a cybersecurity qualification in South Africa</h3>
+                
+                <div class="sponsored-line">
+                    <span>Sponsored</span>
+                    <span>·</span>
+                    <span class="channel-name">Zaio</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="ad-actions">
+            <button class="ad-btn">Watch</button>
+            <button class="ad-btn2">Apply Now</button>
+        </div>
+        
+        <button class="content-menu">
+            <i class="fa-solid fa-ellipsis-vertical"></i>
+        </button>
+    </div>
+
+    <!-- Regular Video Card -->
+<div class="YTcontent-card">
+    <div class="thumbnail-container">
+        <img src="ContentRepo/Peace Thumbnail.avif" alt="Video thumbnail" class="thumbnail-img">
+        <iframe class="video-iframe" 
+                src="https://www.youtube.com/embed/LMds-8dcb-A" 
+                title="YouTube video player" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                allowfullscreen>
+        </iframe>
+        <span class="duration">10:23</span>
+    </div>
+    
+    <!-- Video info with logo on left -->
+    <div class="video-info">
+        <img src="ContentRepo/PeaceLogo.jpg" alt="Peace Ndlovu" class="yt-logo">
+        
+        <div class="video-text">
+            <h3>I Bought An Audi RS3! | Collection Day 🔥🩶</h3>
+            <p>Peace Ndlovu <br> 33K views • 12 hours ago</p>
+        </div>
+        
+        <button class="content-menu">
+            <i class="fa-solid fa-ellipsis-vertical"></i>
+        </button>
+    </div>
+</div>
+
+<div class="YTcontent-card">
+    <div class="thumbnail-container">
+        <img src="ContentRepo/thumbnail2.avif" alt="Video thumbnail" class="thumbnail-img">
+        <iframe class="video-iframe" 
+                src="https://www.youtube.com/embed/-HTp-36aJHs?si=HLyn6chilxE1ET-d" 
+                title="YouTube video player" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                allowfullscreen>
+        </iframe>
+        <span class="duration">10:23</span>
+    </div>
+    
+    <!-- Video info with logo on left -->
+    <div class="video-info">
+        <img src="ContentRepo/Autoid logo.jpg" alt="Autoid" class="yt-logo">
+        
+        <div class="video-text">
+            <h3>They'll Never Make Another M Car Like This .</h3>
+            <p>Autoid<br> 14K views • 1 day ago</p>
+        </div>
+        
+        <button class="content-menu">
+            <i class="fa-solid fa-ellipsis-vertical"></i>
+        </button>
+    </div>
+</div>
+</section>
+<!--Yt shorts section-->
+<section class="Yt-Shorts">
+    <!-- Shorts Header -->
+    <div class="Header">
+        <img src="Repository/shorts.svg" alt="Shorts">
+        <h2>Shorts</h2>
+    </div>
+    
+    <!-- Shorts Grid - 5 items -->
+    <div class="shorts-grid">
+        <!-- Short 1 -->
+        <div class="short-vid">
+            <div class="thumbnail-container">
+                <img src="ContentRepo/short1.avif" alt="short-thumbnail" class="short-thumbnail">
+                <iframe class="video-iframe" 
+                        src="https://www.youtube.com/embed/KMqEZS2d8Hk" 
+                        title="YouTube video player" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                        allowfullscreen>
+                </iframe>
+            </div>
+            <div class="shorts-desc">
+                <h3>How does the Omni-enhanced Omnitrix actually work</h3>
+                <p>128K views</p>
+            </div>
+            <button class="content-menu">
+                <i class="fa-solid fa-ellipsis-vertical"></i>
+            </button>
+        </div>
+           <!-- Short 2 -->
+        <div class="short-vid">
+            <div class="thumbnail-container">
+                <img src="ContentRepo/short2.avif" alt="short-thumbnail" class="short-thumbnail">
+                <iframe class="video-iframe" 
+                        src="https://youtube.com/embed/GOBn1NwtOwg" 
+                        title="YouTube video player" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                        allowfullscreen>
+                </iframe>
+            </div>
+            <div class="shorts-desc">
+                <h3>We Straight Piped A 2015 </br> BMW I8!</h3>
+                <p>857K views</p>
+            </div>
+            <button class="content-menu">
+                <i class="fa-solid fa-ellipsis-vertical"></i>
+            </button>
+        </div>
+           <!-- Short 3 -->
+        <div class="short-vid">
+            <div class="thumbnail-container">
+                <img src="ContentRepo/short3.avif" alt="short-thumbnail" class="short-thumbnail">
+                <iframe class="video-iframe" 
+                        src="https://youtube.com/embed/UtwaprB2HEI" 
+                        title="YouTube video player" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                        allowfullscreen>
+                </iframe>
+            </div>
+            <div class="shorts-desc">
+                <h3>You dont need a <br> Dockerfile for .Net Apps...</h3>
+                <p>23K views</p>
+            </div>
+            <button class="content-menu">
+                <i class="fa-solid fa-ellipsis-vertical"></i>
+            </button>
+        </div>
+           <!-- Short 4 -->
+        <div class="short-vid">
+            <div class="thumbnail-container">
+                <img src="ContentRepo/short4.avif" alt="short-thumbnail" class="short-thumbnail">
+                <iframe class="video-iframe" 
+                        src="https://youtube.com/embed/zWo6IqAfehE" 
+                        title="YouTube video player" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                        allowfullscreen>
+                </iframe>
+            </div>
+            <div class="shorts-desc">
+                <h3>ObjectPool is awesome in .NET</h3>
+                <p>61K views</p>
+            </div>
+            <button class="content-menu">
+                <i class="fa-solid fa-ellipsis-vertical"></i>
+            </button>
+        </div>
+           <!-- Short 5 -->
+        <div class="short-vid">
+            <div class="thumbnail-container">
+                <img src="ContentRepo/short5.avif" alt="short-thumbnail" class="short-thumbnail">
+                <iframe class="video-iframe" 
+                        src="https://youtube.com/embed/lpFLjHm5dUQ" 
+                        title="YouTube video player" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                        allowfullscreen>
+                </iframe>
+            </div>
+            <div class="shorts-desc">
+                <h3>😳😳😳#machine #metal #cnc #cnmachine #cncmachining #machining #welding #repair</h3>
+                <p>7.1M views</p>
+            </div>
+            <button class="content-menu">
+                <i class="fa-solid fa-ellipsis-vertical"></i>
+            </button>
+        </div>
+         
+</section>
+   <!--Second Video section-->
+   <section class="second-video-load">
+
+    <div class="YTcontent-card">
+    <div class="thumbnail-container">
+        <img src="ContentRepo/DIY Thumbnail.webp" alt="Video thumbnail" class="thumbnail-img">
+        <iframe class="video-iframe" 
+                src="https://www.youtube.com/embed/rqCt61ZbU10?si=n4eRfv8nmpvFMdTA" 
+                title="YouTube video player" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                allowfullscreen>
+        </iframe>
+        <span class="duration">25:08</span>
+    </div>
+    
+    <!-- Video info with logo on left -->
+    <div class="video-info">
+        <img src="ContentRepo/DIYLogog.jpg" alt="Peace Ndlovu" class="yt-logo">
+        
+        <div class="video-text">
+            <h3>Building and LED SUPERNOVA!</h3>
+            <p>DIY Perks <i class="fa-solid fa-circle-check" style="color: #606060;"></i> <br> 809K views • 12 hours ago</p>
+        </div>
+        
+        <button class="content-menu">
+            <i class="fa-solid fa-ellipsis-vertical"></i>
+        </button>
+    </div>
+</div>
+    <!--Content 5-->
+<div class="YTcontent-card">
+    <div class="thumbnail-container">
+        <img src="ContentRepo/Musi.avif" alt="Video thumbnail" class="thumbnail-img">
+        <iframe class="video-iframe" 
+                src="https://www.youtube.com/embed/6D6-m6cT_Fw" 
+                title="YouTube video player" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                allowfullscreen>
+        </iframe>
+        <span class="duration">7:32</span>
+    </div>
+    
+    <!-- Video info with logo on left -->
+    <div class="video-info">
+        <img src="ContentRepo/MRHMLogo.jpg" alt="Autoid" class="yt-logo">
+        
+        <div class="video-text">
+            <h3>2026 GWM P500 Price Review | Cost of Ownership | Fuel Consumption | Insurance...</h3>
+            <p>MrHowMuch <i class="fa-solid fa-circle-check" style="color: #606060;"></i><br> 37K views • 1 day ago</p>
+        </div>
+        
+        <button class="content-menu">
+            <i class="fa-solid fa-ellipsis-vertical"></i>
+        </button>
+    </div>
+</div>
+<!--Content 6-->
+<div class="YTcontent-card">
+    <div class="thumbnail-container">
+        <img src="ContentRepo/Repair.avif" alt="Video thumbnail" class="thumbnail-img">
+        <iframe class="video-iframe" 
+                src="https://www.youtube.com/embed/-HTp-36aJHs?si=HLyn6chilxE1ET-d" 
+                title="YouTube video player" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                allowfullscreen>
+        </iframe>
+        <span class="duration">20:49</span>
+    </div>
+    
+    <!-- Video info with logo on left -->
+    <div class="video-info">
+        <img src="ContentRepo/RepairLogo.jpg" alt="Autoid" class="yt-logo">
+        
+        <div class="video-text">
+            <h3>[ASMR] Complete Tutorial:Upgrade Iphone17 <br> Pro Max 256GB to 2TB .</h3>
+            <p>DirectorFeng<br> 222K views • 1 Month ago</p>
+        </div>
+        
+        <button class="content-menu">
+            <i class="fa-solid fa-ellipsis-vertical"></i>
+        </button>
+    </div>
+</div>
+   </section>
+    </main>
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+
