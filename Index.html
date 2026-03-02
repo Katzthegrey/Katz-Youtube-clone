@@ -14,6 +14,71 @@
 </head>
 <body>
     <!-- Cursor feature: hover cards outside aside so they're not clipped by overflow-y: auto -->
+       <!-- Mobile Header (visible only on mobile) -->
+    <nav class="mobile-header">
+        <div class="mobile-header-left">
+            <img src="Repository/Play.svg" alt="YouTube" class="logo">
+        </div>
+        
+        <div class="mobile-header-right">
+            <!-- Search button -->
+            <button class="mobile-search-btn">
+                <i class="fas fa-search"></i>
+            </button>
+            
+            <!-- Notification button with badge -->
+            <button class="mobile-notification">
+                <i class="fas fa-bell"></i>
+                <span class="noti-count">9+</span>
+            </button>
+            
+            <!-- Create button -->
+            <button class="create-mobile">
+                <i class="fas fa-plus-square"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Categories (visible only on mobile) -->
+    <div class="mobile-categories">
+        <button class="cat-btn active">All</button>
+        <button class="cat-btn">Gaming</button>
+        <button class="cat-btn">Call of Duty</button>
+        <button class="cat-btn">Debugging</button>
+        <button class="cat-btn">Music</button>
+        <button class="cat-btn">BMW</button>
+        <button class="cat-btn">Asp.Net</button>
+        <button class="cat-btn">Vegeta</button>
+        <button class="cat-btn">Manga</button>
+        <button class="cat-btn">Computer Hardware</button>
+        <button class="cat-btn">Coding tutorials</button>
+        <button class="cat-btn">New to you</button>
+    </div>
+
+    <!-- Mobile Bottom Navigation (visible only on mobile) -->
+    <div class="mobile-bottom-nav">
+        <button class="mobile-nav-item active">
+            <i class="fas fa-home"></i>
+            <span>Home</span>
+        </button>
+        <button class="mobile-nav-item">
+            <img src="Repository/shorts.svg" alt="Shorts">
+            <span>Shorts</span>
+        </button>
+        <button class="mobile-nav-item">
+            <i class="fas fa-plus-square"></i>
+            <span>Create</span>
+        </button>
+        <button class="mobile-nav-item">
+            <i class="fas fa-bell"></i>
+            <span>Subscriptions</span>
+        </button>
+        <button class="mobile-nav-item">
+            <i class="fas fa-user"></i>
+            <span>You</span>
+        </button>
+    </div>
+        <!-- Cursor feature: hover cards outside aside so they're not clipped by overflow-y: auto -->
     <div class="hover-card hover-card--live" data-desc="Metaphor has been live for 30 minutes" data-views="2.4K watching" aria-hidden="true"></div>
     <div class="hover-card hover-card--interview" data-desc="Interview Happy posted this video — check it out: What are the use cases of async in .NET" data-views="23K views" aria-hidden="true"></div>
     <div class="hover-card hover-card--boa" data-desc="Black Ops Amazing posted this video — check it out: Best Warzone Loadouts 2025" data-views="12K views" aria-hidden="true"></div>
@@ -495,7 +560,7 @@
     <div class="thumbnail-container">
         <img src="ContentRepo/Repair.avif" alt="Video thumbnail" class="thumbnail-img">
         <iframe class="video-iframe" 
-                src="https://www.youtube.com/embed/-HTp-36aJHs?si=HLyn6chilxE1ET-d" 
+                src="https://www.youtube.com/embed/F0HMf57a6PU" 
                 title="YouTube video player" 
                 frameborder="0" 
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
@@ -519,10 +584,100 @@
     </div>
 </div>
    </section>
+   <!--Content section 3-->
+   </section>
+   <!--Third Video section-->
+   <section class="second-video-load">
+
+    <div class="YTcontent-card">
+    <div class="thumbnail-container">
+        <img src="ContentRepo/Serilog.avif" alt="Video thumbnail" class="thumbnail-img">
+        <iframe class="video-iframe" 
+                src="https://www.youtube.com/embed/gI_8N8WbFqI" 
+                title="YouTube video player" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                allowfullscreen>
+        </iframe>
+        <span class="duration">5:55</span>
+    </div>
+    
+    <!-- Video info with logo on left -->
+    <div class="video-info">
+        <img src="ContentRepo/SeriLogo.jpg" alt="Peace Ndlovu" class="yt-logo">
+        
+        <div class="video-text">
+            <h3>Serilog Enrichers - Serilog Correlation ID <br> [Serilog C# tutorial]</h3>
+            <p>Coding Droplets <br> 3.1K views • 1 year ago</p>
+        </div>
+        
+        <button class="content-menu">
+            <i class="fa-solid fa-ellipsis-vertical"></i>
+        </button>
+    </div>
+</div>
+    <!--Content 7-->
+<div class="YTcontent-card">
+    <div class="thumbnail-container">
+        <img src="ContentRepo/SysDesign.avif" alt="Video thumbnail" class="thumbnail-img">
+        <iframe class="video-iframe" 
+                src="https://www.youtube.com/embed/wwaadPgjYXY" 
+                title="YouTube video player" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                allowfullscreen>
+        </iframe>
+        <span class="duration">12:12</span>
+    </div>
+    
+    <!-- Video info with logo on left -->
+    <div class="video-info">
+        <img src="ContentRepo/SysLogo.jpg" alt="Autoid" class="yt-logo">
+        
+        <div class="video-text">
+            <h3>System design made so simple it feels illegal</h3>
+            <p>Manware <br> 15K views • 1 day ago</p>
+        </div>
+        
+        <button class="content-menu">
+            <i class="fa-solid fa-ellipsis-vertical"></i>
+        </button>
+    </div>
+</div>
+<!--Content 8-->
+<div class="YTcontent-card">
+    <div class="thumbnail-container">
+        <img src="ContentRepo/Maleh.avif" alt="Video thumbnail" class="thumbnail-img">
+        <iframe class="video-iframe" 
+                src="https://www.youtube.com/embed/LboUUN7zVdU" 
+                title="YouTube video player" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                allowfullscreen>
+        </iframe>
+        <span class="duration">3:03</span>
+    </div>
+    
+    <!-- Video info with logo on left -->
+    <div class="video-info">
+        <img src="ContentRepo/MalehLogo.jpg" alt="Autoid" class="yt-logo">
+        
+        <div class="video-text">
+            <h3>Ke Mo Afrika-Maleh </h3>
+            <p>Mace2605<br> 127K views • 2 years ago</p>
+        </div>
+        
+        <button class="content-menu">
+            <i class="fa-solid fa-ellipsis-vertical"></i>
+        </button>
+    </div>
+</div>
+   </section>
     </main>
     </div>
 </body>
 </html>
+
 
 
 

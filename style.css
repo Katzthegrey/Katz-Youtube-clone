@@ -6,30 +6,6 @@
     box-sizing: border-box;
 }
 
-:root {
-    --bg-page: #f9f9f9;
-    --bg-nav: #ffffff;
-    --bg-card: #ffffff;
-    --bg-hover: #f2f2f2;
-    --bg-button: #f2f2f2;
-    --bg-ad: #f9f9f9;
-    
-    --text-primary: #030303;
-    --text-secondary: #606060;
-    --text-inverse: #ffffff;
-    
-    --border-light: #e5e5e5;
-    --border-focus: #1c62b9;
-    
-    --accent-blue: #065fd4;
-    --accent-red: #cc0000;
-    --accent-orange: rgba(255, 165, 0, 0.05);
-    --accent-orange-outline: rgba(255, 165, 0, 0.3);
-    
-    --logo-filter: none;
-    --shadow-color: rgba(0, 0, 0, 0.05);
-}
-
 body {
     font-family: 'Roboto', sans-serif;
     background-color: #f9f9f9;
@@ -574,11 +550,11 @@ main {
 }
 
 .YTcontent-card:hover {
-    background-color: rgba(255, 165, 0, 0.05); /* Very dull orange (5% opacity) */
-    outline: 1px solid rgba(255, 165, 0, 0.3); /* Subtle orange outline */
-    outline-offset: 2px; /* Slight offset from card edge */
-    border-radius: 12px; /* Keep consistent rounding */
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); /* Optional subtle shadow */
+    background-color: rgba(255, 165, 0, 0.05); 
+    outline: 1px solid rgba(255, 165, 0, 0.3); 
+    outline-offset: 2px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); 
 }
 
 /* Ad container - slightly larger */
@@ -732,7 +708,7 @@ main {
 
 /* Move content menu inside video-info */
 .YTcontent-card .content-menu {
-    position: static; /* Remove absolute positioning */
+    position: static; 
     background: none;
     border: none;
     cursor: pointer;
@@ -744,7 +720,7 @@ main {
     justify-content: center;
     color: #606060;
     flex-shrink: 0;
-    margin-top: -4px; /* Align with first line */
+    margin-top: -4px; 
 }
 
 .YTcontent-card .content-menu:hover {
@@ -777,7 +753,7 @@ main {
     opacity: 0;
     pointer-events: none;
     border: none;
-    z-index: 2; /* Higher z-index to appear above image when visible */
+    z-index: 2; 
 }
 
 /* Image stays below iframe */
@@ -979,40 +955,203 @@ main {
     margin: 0; 
 }
 
-/* ==================== */
-/* MOBILE RESPONSIVE DESIGN */
-/* ==================== */
-
-@media screen and (max-width: 768px) {
-    /* Hide desktop navigation */
-    nav .menu-button,
-    nav .logo,
-    #searchbar,
-    .voice-search-button,
-    nav .create,
-    .notification-icon,
-    .profile-icon {
+/* ===== MOBILE RESPONSIVE (No JavaScript Needed) ===== */
+@media (max-width: 768px) {
+    /* Hide desktop elements */
+    nav:not(.mobile-header) {
+        display: none !important;
+    }
+    
+    aside {
+        display: none !important;
+    }
+    
+    /* Hide cursor feature hover cards on mobile */
+    .hover-card {
+        display: none !important;
+    }
+    
+    /* Show mobile header */
+    .mobile-header {
+        display: flex !important;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 12px;
+        height: 56px;
+        background-color: var(--bg-nav, #ffffff);
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+        border-bottom: 1px solid var(--border-light, #e5e5e5);
+        box-sizing: border-box;
+    }
+    
+    .mobile-header-left {
+        display: flex;
+        align-items: center;
+    }
+    
+    .mobile-header-left .logo {
+        height: 40px;
+        width: auto;
+    }
+    
+    .mobile-header-right {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+    
+    /* Mobile search button */
+    .mobile-search-btn {
+        background: none;
+        border: none;
+        cursor: pointer;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .mobile-search-btn i {
+        font-size: 20px;
+        color: var(--text-primary, #030303);
+    }
+    
+    .mobile-search-btn:active {
+        background-color: var(--bg-hover, #f2f2f2);
+    }
+    
+    /* Mobile notification with badge */
+    .mobile-notification {
+        position: relative;
+        background: none;
+        border: none;
+        cursor: pointer;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .mobile-notification i {
+        font-size: 20px;
+        color: var(--text-primary, #030303);
+    }
+    
+    .mobile-notification .noti-count {
+        position: absolute;
+        top: 2px;
+        right: 2px;
+        background-color: #cc0000;
+        color: white;
+        font-size: 10px;
+        font-weight: 500;
+        min-width: 16px;
+        height: 16px;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0 4px;
+        border: 1.5px solid var(--bg-nav, #ffffff);
+    }
+    
+    .mobile-notification:active {
+        background-color: var(--bg-hover, #f2f2f2);
+    }
+    
+    /* Create button in mobile header */
+    .create-mobile {
+        background: none;
+        border: none;
+        cursor: pointer;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .create-mobile i {
+        font-size: 24px;
+        color: var(--text-primary, #030303);
+    }
+    
+    .create-mobile:active {
+        background-color: var(--bg-hover, #f2f2f2);
+    }
+    
+    /* Mobile Categories - Always visible */
+    .mobile-categories {
+        display: flex !important;
+        position: fixed;
+        top: 56px;
+        left: 0;
+        width: 100%;
+        align-items: center;
+        gap: 8px;
+        padding: 8px 12px;
+        overflow-x: auto;
+        white-space: nowrap;
+        scrollbar-width: none;
+        background-color: var(--bg-page, #f9f9f9);
+        z-index: 999;
+        border-bottom: 1px solid var(--border-light, #e5e5e5);
+        box-sizing: border-box;
+    }
+    
+    .mobile-categories::-webkit-scrollbar {
         display: none;
     }
-
-    /* Mobile bottom navigation bar */
+    
+    .mobile-categories .cat-btn {
+        background-color: var(--bg-button, #f2f2f2);
+        border: 1px solid var(--border-light, #e5e5e5);
+        border-radius: 16px;
+        padding: 6px 12px;
+        font-size: 14px;
+        font-weight: 500;
+        color: var(--text-primary, #030303);
+        cursor: pointer;
+        white-space: nowrap;
+        flex-shrink: 0;
+    }
+    
+    .mobile-categories .cat-btn:active {
+        background-color: var(--bg-hover, #e5e5e5);
+    }
+    
+    .mobile-categories .cat-btn.active {
+        background-color: var(--text-primary, #030303);
+        color: var(--bg-page, #f9f9f9);
+        border-color: var(--text-primary, #030303);
+    }
+    
+    /* Mobile Bottom Navigation */
     .mobile-bottom-nav {
+        display: flex !important;
         position: fixed;
         bottom: 0;
         left: 0;
         width: 100%;
-        height: 60px;
-        background-color: white;
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        border-top: 1px solid #e5e5e5;
+        height: 56px;
+        background-color: var(--bg-nav, #ffffff);
+        border-top: 1px solid var(--border-light, #e5e5e5);
         z-index: 1000;
-        padding: 0 8px;
-        box-shadow: 0 -2px 10px rgba(0,0,0,0.05);
+        padding: 0 4px;
+        box-sizing: border-box;
     }
-
+    
     .mobile-nav-item {
+        flex: 1;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -1020,199 +1159,183 @@ main {
         background: none;
         border: none;
         cursor: pointer;
-        padding: 8px 0;
-        width: 20%;
-        color: #606060;
-        font-size: 10px;
-        gap: 4px;
-        transition: color 0.2s;
+        padding: 4px 0;
+        color: var(--text-secondary, #606060);
+        gap: 2px;
     }
-
-    .mobile-nav-item i {
-        font-size: 22px;
+    
+    .mobile-nav-item i,
+    .mobile-nav-item img {
+        font-size: 20px;
+        width: 20px;
+        height: 20px;
         margin-bottom: 2px;
     }
-
+    
+    .mobile-nav-item img {
+        filter: none;
+    }
+    
     .mobile-nav-item span {
-        font-size: 11px;
-        font-weight: 500;
+        font-size: 10px;
+        font-weight: 400;
     }
-
+    
+    .mobile-nav-item:active {
+        background-color: var(--bg-hover, #f2f2f2);
+        border-radius: 8px;
+    }
+    
     .mobile-nav-item.active {
-        color: #030303;
+        color: var(--text-primary, #030303);
     }
-
-    /* Adjust main content for bottom nav */
-    body {
-        padding-bottom: 60px;
+    
+    .mobile-nav-item.active i {
+        color: var(--text-primary, #030303);
     }
-
+    
+    .mobile-nav-item.active img {
+        filter: brightness(0);
+    }
+    
+    /* Main content adjustments */
     main {
-        margin-left: 0;
-        padding: 16px 12px 0 12px;
+        margin-left: 0 !important;
+        margin-top: 112px !important; 
+        margin-bottom: 56px !important;
+        padding: 12px !important;
+        width: 100% !important;
+        box-sizing: border-box;
     }
-
-    /* Hide sidebar on mobile */
-    aside {
-        display: none;
-    }
-
-    /* Adjust categories for mobile */
+    
+    /* Hide desktop categories */
     .categories {
-        padding: 0 0 12px 0;
+        display: none !important;
     }
-
-    .categories button {
-        padding: 6px 10px;
-        font-size: 13px;
-    }
-
-    /* Content cards grid - 2 columns on mobile */
-    .content-cards {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 12px;
-        padding: 12px 0;
-    }
-
-    /* Shorts grid - horizontal scroll on mobile */
-    .Yt-Shorts .shorts-grid {
-        display: flex;
-        overflow-x: auto;
-        gap: 12px;
-        padding: 8px 0 16px 0;
-        scrollbar-width: none;
-        -webkit-overflow-scrolling: touch;
-    }
-
-    .Yt-Shorts .shorts-grid::-webkit-scrollbar {
-        display: none;
-    }
-
-    .Yt-Shorts .short-vid {
-        min-width: 130px;
-        max-width: 130px;
-    }
-
-    /* Second video load grid */
+    
+    /* Grid adjustments */
+    .content-cards,
     .second-video-load {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 12px;
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 12px !important;
     }
-
-    /* Adjust video card for mobile */
-    .YTcontent-card .video-text h3 {
-        font-size: 14px;
-        line-height: 1.3;
-        margin-bottom: 2px;
+    
+    .shorts-grid {
+        display: grid !important;
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 8px !important;
     }
-
-    .YTcontent-card .video-text p {
-        font-size: 12px;
-    }
-
-    /* Adjust ad container for mobile */
+    
+    /* Card adjustments */
+    .YTcontent-card,
     .Ad-container {
-        max-width: 100%;
-        padding: 12px;
+        max-width: 100% !important;
+        width: 100% !important;
+        margin: 0 !important;
     }
-
-    .Ad-container h3 {
-        font-size: 14px;
+    
+    .video-info {
+        padding: 8px 4px !important;
+        gap: 8px !important;
     }
-
-    .sponsored-line {
-        font-size: 12px;
-        flex-wrap: wrap;
+    
+    .yt-logo,
+    .ad-logo {
+        width: 28px !important;
+        height: 28px !important;
     }
-
+    
+    h3 {
+        font-size: 13px !important;
+        line-height: 1.3 !important;
+        -webkit-line-clamp: 2 !important;
+    }
+    
+    p {
+        font-size: 11px !important;
+    }
+    
+    .duration {
+        font-size: 10px !important;
+        padding: 2px 4px !important;
+    }
+    
+    /* Hide three-dot menu on mobile */
+    .content-menu {
+        display: none !important;
+    }
+    
+    /* Adjust ad buttons for mobile */
     .ad-actions {
-        flex-direction: row;
+        gap: 6px !important;
     }
-
+    
     .Ad-container .ad-btn,
     .Ad-container .ad-btn2 {
-        padding: 6px 0;
-        font-size: 12px;
+        padding: 6px 0 !important;
+        font-size: 12px !important;
     }
-
-    /* Mobile header with just logo and create */
-    .mobile-header {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 0 0 12px 0;
-        height: 48px;
+    
+    /* Shorts adjustments */
+    .short-vid {
+        max-width: 100% !important;
     }
-
-    .mobile-header .logo {
-        height: 20px;
-        display: block !important;
+    
+    .shorts-desc h3 {
+        font-size: 12px !important;
     }
-
-    .mobile-header .create-mobile {
-        background: none;
-        border: none;
-        cursor: pointer;
-        padding: 8px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
+    
+    .shorts-desc p {
+        font-size: 10px !important;
     }
-
-    .mobile-header .create-mobile i {
-        font-size: 22px;
-        color: #030303;
+    
+    /* Hide page-wrapper overflow adjustments */
+    .page-wrapper {
+        overflow: visible !important;
     }
+    
 }
 
-/* Small phones (below 480px) */
-@media screen and (max-width: 480px) {
-    /* Single column for content */
-    .content-cards {
-        grid-template-columns: 1fr;
-        gap: 16px;
-    }
-
+/* Extra small phones */
+@media (max-width: 480px) {
+    .content-cards,
     .second-video-load {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr !important;
+        gap: 16px !important;
     }
-
-    /* Adjust shorts cards */
-    .Yt-Shorts .short-vid {
-        min-width: 110px;
-        max-width: 110px;
+    
+    .shorts-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
     }
-
-    .Yt-Shorts .shorts-desc h3 {
-        font-size: 12px;
+    
+    .mobile-nav-item span {
+        font-size: 9px;
     }
-
-    .Yt-Shorts .shorts-desc p {
-        font-size: 10px;
+    
+    .mobile-nav-item i,
+    .mobile-nav-item img {
+        font-size: 18px;
+        width: 18px;
+        height: 18px;
     }
-
-    /* Categories horizontal scroll */
-    .categories {
-        padding: 0 0 8px 0;
+    
+    .mobile-header-right {
+        gap: 4px;
     }
-
-    .categories button {
-        padding: 6px 10px;
-        font-size: 12px;
-    }
-
-    /* Adjust video card info */
-    .YTcontent-card .yt-logo {
-        width: 32px;
-        height: 32px;
-    }
-
-    .YTcontent-card .content-menu {
-        width: 28px;
-        height: 28px;
+    
+    .mobile-search-btn,
+    .mobile-notification,
+    .create-mobile {
+        width: 36px;
+        height: 36px;
     }
 }
 
-
-
-
+/* Tablet adjustments */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .content-cards,
+    .second-video-load {
+        grid-template-columns: repeat(3, 1fr) !important;
+    }
+}
